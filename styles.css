@@ -1,0 +1,31 @@
+.todos {
+    padding: 50px 0;    
+    background-color:powderblue;
+}
+.todos__header {
+    margin: 0 auto;
+    width: 600px;
+    text-align: center;
+    color:bisque;
+}
+.todos__input {
+    margin: 0 auto;
+    padding: 20px 20px;
+    width: 600px;
+    border: black solid 1px;
+    background-color: #f2f2f2;
+}
+.todos__list {
+    margin: 0 auto;
+    padding: 15px 20px;
+    width: 600px;
+    border: black solid 1px;
+    background-color: #f2f2f2;
+}
+.todos__controls {
+    margin: 0 auto;
+    padding: 12px 20px;
+    width: 600px;
+    border: black solid 1px;
+    background-color: #f2f2f2;
+}
