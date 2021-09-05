@@ -1,3 +1,4 @@
+let testArr = ["сделать","хорошо подумать","не делать"];
 
 class Inputform extends React.Component {
     constructor(props) {
@@ -8,8 +9,8 @@ class Inputform extends React.Component {
     }
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <input type='text' value={this.state.value}/>
+            <form className='todos__form' onSubmit={this.handleSubmit}>
+                <input className='todos__input' type='text' value={this.state.value}/>
             </form>);
     }
 }
@@ -20,10 +21,8 @@ class Todos extends React.Component {
       return (<div className='todos'>
         <div className='todos__header'>
             <h1>TODOS</h1>
-        </div>
-        <div className='todos__input'>
+        </div>  
         <Inputform />
-        </div>
         <div className='todos__list'>
         todos list here soon
         </div>
@@ -33,6 +32,9 @@ class Todos extends React.Component {
       </div>);
     }
 }
-//*******************************
+
+//*******************************<div className='todos__input'>
+        //<Inputform />
+        //</div>
 
 ReactDOM.render(<Todos />, document.getElementById('root'));

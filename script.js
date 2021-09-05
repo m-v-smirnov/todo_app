@@ -6,6 +6,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var testArr = ["сделать", "хорошо подумать", "не делать"];
+
 var Inputform = function (_React$Component) {
     _inherits(Inputform, _React$Component);
 
@@ -21,12 +23,12 @@ var Inputform = function (_React$Component) {
     }
 
     _createClass(Inputform, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             return React.createElement(
-                'form',
-                { onSubmit: this.handleSubmit },
-                React.createElement('input', { type: 'text', value: this.state.value })
+                "form",
+                { className: "todos__form", onSubmit: this.handleSubmit },
+                React.createElement("input", { className: "todos__input", type: "text", value: this.state.value })
             );
         }
     }]);
@@ -44,34 +46,30 @@ var Todos = function (_React$Component2) {
     }
 
     _createClass(Todos, [{
-        key: 'render',
+        key: "render",
         value: function render() {
             return React.createElement(
-                'div',
-                { className: 'todos' },
+                "div",
+                { className: "todos" },
                 React.createElement(
-                    'div',
-                    { className: 'todos__header' },
+                    "div",
+                    { className: "todos__header" },
                     React.createElement(
-                        'h1',
+                        "h1",
                         null,
-                        'TODOS'
+                        "TODOS"
                     )
                 ),
+                React.createElement(Inputform, null),
                 React.createElement(
-                    'div',
-                    { className: 'todos__input' },
-                    React.createElement(Inputform, null)
+                    "div",
+                    { className: "todos__list" },
+                    "todos list here soon"
                 ),
                 React.createElement(
-                    'div',
-                    { className: 'todos__list' },
-                    'todos list here soon'
-                ),
-                React.createElement(
-                    'div',
-                    { className: 'todos__controls' },
-                    'todos control here soon'
+                    "div",
+                    { className: "todos__controls" },
+                    "todos control here soon"
                 )
             );
         }
@@ -79,6 +77,9 @@ var Todos = function (_React$Component2) {
 
     return Todos;
 }(React.Component);
-//*******************************
+
+//*******************************<div className='todos__input'>
+//<Inputform />
+//</div>
 
 ReactDOM.render(React.createElement(Todos, null), document.getElementById('root'));

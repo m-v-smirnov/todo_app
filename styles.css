@@ -1,12 +1,17 @@
-.todos {
-    padding: 50px 0;    
+* {
     background-color:powderblue;
+}
+.todos {
+    padding: 50px 0;
 }
 .todos__header {
     margin: 0 auto;
     width: 600px;
     text-align: center;
     color:bisque;
+}
+.todos__form {
+    margin: 0 auto;
 }
 .todos__input {
     margin: 0 auto;
