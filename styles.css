@@ -8,9 +8,10 @@
     margin: 0 auto;
     width: 600px;
     text-align: center;
-    color:bisque;
+    color: green;
 }
 .todos__form {
+    width: fit-content;
     margin: 0 auto;
 }
 .todos__input {
@@ -33,4 +34,11 @@
     width: 600px;
     border: black solid 1px;
     background-color: #f2f2f2;
+}
+/*input[type=checkbox] {
+   /* border-radius: 10px;*/
+   
+}*/
+.todos__check {
+    border-radius: 5px;
 }
