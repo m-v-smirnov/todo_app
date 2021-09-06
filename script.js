@@ -8,6 +8,24 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var testArr = ["сделать", "хорошо подумать", "не делать"];
 
+function Todoslines(props) {
+
+    var intArr = props.Arr;
+    return intArr.map(function (elem, index) {
+        return React.createElement(
+            "div",
+            { className: "todos__list" },
+            React.createElement("input", { className: "todos__check", type: "checkbox", id: index, name: index, value: "something_to_do" }),
+            React.createElement(
+                "label",
+                { "for": index },
+                " ",
+                elem
+            )
+        );
+    });
+}
+
 var Inputform = function (_React$Component) {
     _inherits(Inputform, _React$Component);
 
@@ -17,18 +35,33 @@ var Inputform = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (Inputform.__proto__ || Object.getPrototypeOf(Inputform)).call(this, props));
 
         _this.state = {
-            value: 'add todos'
-        };
+            value: '' };
+        _this.handleChange = _this.handleChange.bind(_this);
+        _this.handleSubmit = _this.handleSubmit.bind(_this);
         return _this;
     }
 
     _createClass(Inputform, [{
+        key: "handleChange",
+        value: function handleChange(event) {
+            this.setState({ value: event.target.value });
+        }
+    }, {
+        key: "handleSubmit",
+        value: function handleSubmit(event) {
+            testArr.push(this.state.value);
+            event.preventDefault();
+            console.log(this.state.value);
+            console.log(testArr);
+            this.state.value = '';
+        }
+    }, {
         key: "render",
         value: function render() {
             return React.createElement(
                 "form",
                 { className: "todos__form", onSubmit: this.handleSubmit },
-                React.createElement("input", { className: "todos__input", type: "text", value: this.state.value })
+                React.createElement("input", { className: "todos__input", type: "text", value: this.state.value, placeholder: "Something To Do", onChange: this.handleChange })
             );
         }
     }]);
@@ -57,14 +90,14 @@ var Todos = function (_React$Component2) {
                     React.createElement(
                         "h1",
                         null,
-                        "TODOS"
+                        "todo list:"
                     )
                 ),
                 React.createElement(Inputform, null),
                 React.createElement(
                     "div",
-                    { className: "todos__list" },
-                    "todos list here soon"
+                    null,
+                    React.createElement(Todoslines, { Arr: testArr })
                 ),
                 React.createElement(
                     "div",
